@@ -1,1 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      const currentPath = window.location.pathname;
+      // If someone types /vamsikrishna (any case variation)
+      if (currentPath.toLowerCase() === "/vamsikrishna" && currentPath !== "/VamsiKrishna") {
+        window.location.replace("/VamsiKrishna");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the correct page...</p>
+  </body>
+</html>
  
