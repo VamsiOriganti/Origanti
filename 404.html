@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      (function() {
+        const path = window.location.pathname;
+        const lower = path.toLowerCase();
+
+        // Normalize lowercase variants of your site path
+        if (lower === "/vamsikrishna" && path !== "/VamsiKrishna") {
+          window.location.replace("/VamsiKrishna/");
+          return;
+        }
+
+        // Also handle nested paths (e.g., /vamsikrishna/about)
+        if (lower.startsWith("/vamsikrishna/") && !path.startsWith("/VamsiKrishna/")) {
+          const suffix = path.substring("/vamsikrishna".length);
+          window.location.replace("/VamsiKrishna" + suffix);
+          return;
+        }
+
+        // If not matching any redirect, go to homepage
+        window.location.replace("/VamsiKrishna/");
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting… If it doesn't happen automatically, <a href="/VamsiKrishna/">click here</a>.</p>
+  </body>
+</html>
